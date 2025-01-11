@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domino's Style Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background-color: #f8f8f8; */
+        }
+        body::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+        header {
+            background-color: #0054a6;
+            color: white;
+            padding: 1px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1{            
+            position:absolute;
+            left: 50%;
+            font-family: cursive;
+            transform: translate(-50%);
+            font-size: 30px;
+        }
+        header .location button{
+            background-color: #050505aa;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 50px;
+            border: none;
+           
+        }
+        .location {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+           
+        }
+        .location span {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .menu-icon{
+            display: none;
+        }
+        main {
+            padding: 20px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .tab:hover {
+            background-color: #444;
+        }
+        .tab.active {
+            background-color: #0054a6;
+        }
+        /* .section1{
+            background-color: #fbfbfb;
+        }
+        .section2{
+            background-color: #fbfbfb;
+        } */
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .grid1 {
+           max-height:100px;
+           overflow-y: hidden;
+           display: flex;
+           overflow-x: auto;
+           gap: 10px;
+           /* background-color: aquamarine; */
+
+        }
+        .grid1::-webkit-scrollbar {
+          width: 0;
+         height: 0;
+        }
+        .grid2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .card1 {
+           min-width: 150px;
+           height: 95px;
+           border-radius: 10px;
+           /* background-color: rgba(213, 211, 211, 0.597); */
+           text-align:center;
+           padding-top: 2px;
+           cursor:pointer;
+          
+        }
+        /* .card1 {
+            background-color: rgba(255, 255, 255, 0);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        
+        } */
+        .card1 img {
+            width: 50%;
+            border-radius: 50px;
+            height: auto;
+            transition: all 0.3s ease;
+        }
+        .card1 img:hover {
+          scale: 1.09;
+          transition: all 0.3s ease;
+        }
+        .card1 .card-title {
+            font-size: 14px;
+            margin: 0px 0px;
+            color: #000000af;
+        }
+        .card1 .card-description {
+            font-size: 14px;
+            color: #666;
+            padding: 0 10px;
+            
+        }
+        .card1 button {
+            background-color: #0054a6;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .card1 button:hover {
+            background-color: #004080;
+        }
+        .grid2 .card {
+            background-color: rgba(255, 255, 255, 0.986);
+            border-radius: 10px;
+           height: 150px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+      
+       
+        /* ////////////////////////////// */
+        .profile{
+          background-image: url("./images/profile.png");
+          background-size: cover;
+            width: 40px;
+            height: 40px;
+            border-radius: 50px;
+        }
+        .profile-con{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .section3{
+            position: relative;
+            top: 30px;
+            height: 50vh;
+            width: 100%;
+            padding-top: 5px;
+            background-color: rgb(252, 249, 249);
+        }
+        .section3 .heading{
+            margin-bottom: 0px;
+          text-align: center;
+            /* background-color: rgb(1, 255, 132); */
+        }
+        .section3 .para{
+            margin-top: 5px;
+           text-align: center;
+        font-size: 13px;
+            /* background-color: rgb(229, 255, 0); */
+        }
+        .sec3-cards{
+            /* background-color: rgb(254, 253, 253); */
+            display: flex;
+            justify-content: space-between;
+            overflow-x: auto;
+            overflow-y: hidden;
+            min-height: 280px;
+            gap: 13px;
+        }
+        .sec3-cards::-webkit-scrollbar{
+          width: 0;
+          height: 0;
+        }
+        .sec3-card{
+            background-color: #f8f8f8a6;
+            min-width: 280px;
+            height: 318px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.763);
+            border-radius: 10px;
+            
+        }
+        .sec3-card img{
+            width: 280px;
+            height: 318px;
+            border-radius: 10px;
+
+        }
+        .sec3-card .des-text{
+            background-color: rgba(0, 0, 0, 0.459);
+            display: flex;
+            position: relative;
+            bottom: 69.28px;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 0px 0px 10px 10px;
+            box-shadow: -0px -1px 0px rgba(255, 255, 255, 0.514);
+        }
+        .sec3-card .des-text h2{
+           color: rgb(255, 255, 255);
+           line-height: 1px;
+        }
+        .sec3-card .des-text p{
+          color: #ffffff;
+          font-size: 12px;
+          line-height: 10px;
+          border-bottom: 1px dotted white;
+          padding-bottom: 2px;
+        }
+        .sec3-card .des-text button{
+            width: 100px;
+            height: 35px;
+            border: none;
+            background-color: red;
+            border-radius: 5px;
+           line-height: 5px;
+           text-decoration: none;
+
+        }
+        .sec3-card .des-text button a{
+           text-decoration: none;
+           color: white;
+        }
+
+
+        @media screen and (max-width: 600px) {
+            header {
+            background-color: #0561be;
+            color: white;
+            height: 45px;
+
+        }
+            header h1{            
+            position:relative;
+            left: 0%;
+            transform: translate(0%);
+            font-size: 25px;
+        }
+        .menu-icon{
+            display: block;
+            font-size: 30px;
+        }
+
+        .tab {
+            padding: 5px 14px;
+            margin: 0 3px;
+        }
+        .card1 {
+           min-width: 150px;
+           height: 95px;
+           border-radius: 20px;
+           background-color: rgba(0, 0, 0, 0.116);
+          
+        }
+        .location {
+           display: none;
+           
+        }
+        .profile-con{
+            display: none;
+        }
+
+  }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="location">
+            <strong>BHOPAL</strong>
+            <span>Exact Location Required!</span>
+        <button>Detect Location</button>
+        </div>
+        <h1>Pizzology</h1>
+      <div class="menu-icon">&#9776;</div>
+        <div class="profile-con"><div class="profile"></div><p>Deepti Lodhi</p></div>
+    </header>
+    <main>
+        <div class="tabs">
+            <div class="tab active">Delivery Now</div>
+            <div class="tab">Takeaway</div>
+            <div class="tab">Dine-in</div>
+        </div>
+
+        <section class="section section1">
+            <h2 class="section-title">What are you craving for?</h2>
+            <div class="grid1">
+               <a href="./view_page.html" style="text-decoration: none;">
+                <div class="card1">
+                <img src="./images/cheese bust pizza.jpg" alt="Cheese Burst Pizza">
+                <h3 class="card-title">Cheese Burst Pizza</h3>
+                <!-- <p class="card-description">Delicious cheesy delight!</p>
+                <button>Order Now</button> -->
+            </div></a> 
+
+               <a href="./view_page.html" style="text-decoration: none;">
+                <div class="card1">
+                    <img src="./images/veg pizza.png" alt="Veg Pizza">
+                    <h3 class="card-title">Veg Pizza</h3>
+                    <!-- <p class="card-description">Loaded with fresh veggies!</p>
+                    <button>Order Now</button> -->
+                </div>
+               </a> 
+
+               <a href="./view_page.html" style="text-decoration: none;">
+                <div class="card1">
+                    <img src="./images/cheese volcano.jpg" alt="Cheese Volcano">
+                    <h3 class="card-title">Cheese Volcano</h3>
+                    <!-- <p class="card-description">Molten cheese indulgence!</p>
+                    <button>Order Now</button> -->
+                </div>
+               </a>
+               
+
+               <a href="./view_page.html" style="text-decoration: none;">
+                <div class="card1">
+                    <img src="./images/pizza maniya.png" alt="Pizza Mania">
+                    <h3 class="card-title">Pizza Mania</h3>
+                    <!-- <p class="card-description">Affordable and tasty!</p>
+                    <button>Order Now</button> -->
+                </div>
+               </a>
+               
+
+               <a href="./view_page.html" style="text-decoration: none;">
+                <div class="card1">
+                    <img src="./images/garlic breads & more.jpg" alt="Pizza Mania">
+                    <h3 class="card-title">Garlic Breads & More</h3>
+                    <!-- <p class="card-description">Affordable and tasty!</p>
+                    <button>Order Now</button> -->
+                </div>
+               </a>
+                
+
+               <a href="./view_page.html" style="text-decoration: none;">
+                <div class="card1">
+                    <img src="./images/value combs.jpg" alt="Pizza Mania">
+                    <h3 class="card-title">Value Combs</h3>
+                    <!-- <p class="card-description">Affordable and tasty!</p>
+                    <button>Order Now</button> -->
+                </div>
+               </a>
+               
+
+               <a href="./view_page.html" style="text-decoration: none;">
+                <div class="card1">
+                    <img src="./images/beverage.png" alt="Pizza Mania">
+                    <h3 class="card-title">Beverages</h3>
+                    <!-- <p class="card-description">Affordable and tasty!</p>
+                    <button>Order Now</button> -->
+                </div>
+               </a>
+               
+
+               <a href="./view_page.html" style="text-decoration: none;">
+                <div class="card1">
+                    <img src="./images/spicy pizza.png" alt="Pizza Mania">
+                    <h3 class="card-title">Spicy Pizza</h3>
+                    <!-- <p class="card-description">Affordable and tasty!</p>
+                    <button>Order Now</button> -->
+                </div>
+               </a>
+
+               <a href="./view_page.html" style="text-decoration: none;">
+                <div class="card1">
+                    <img src="./images/dessert.png" alt="Pizza Mania">
+                    <h3 class="card-title">Desserts</h3>
+                    <!-- <p class="card-description">Affordable and tasty!</p>
+                    <button>Order Now</button> -->
+                </div>
+               </a>
+                      
+            </div>
+        </section>
+
+        <section class="section section2">
+            <h2 class="section-title">What's New</h2>
+            <div class="grid2">
+                <a href="./view_page.html" >
+                    <div class="card">
+                        <img src="./images/offer.jpg" alt="Special Offer">
+                    </div>
+                </a>
+                
+                <a href="./view_page.html">
+                    <div class="card">
+                        <img src="./images/chees bust offer.JPG" alt="New Cheese Burst">
+                        
+                    </div>
+                </a>
+
+                
+                <a href="./view_page.html">
+                    <div class="card">
+                        <img src="./images/lava cake.jpg" alt="Lava Cakes">
+                       
+                    </div>
+                </a>
+
+               
+                <a href="./view_page.html">
+                    <div class="card">
+                        <img src="./images/super saver.png" alt="Super Saver Combo">
+                        <!-- <h3 class="card-title">Super Saver Combos</h3>
+                        <p class="card-description">Save up to ₹300!</p>
+                        <button>Order Now</button> -->
+                    </div>
+                </a>
+                
+            </div>
+        </section>
+
+        <section class="section3">
+            <h2 class="heading">Popular Veg Delights</h2>
+            <p class="para">FREE Delivery For Orders Above ₹149</p>
+           <div class="sec3-cards">
+            <div class="sec3-card">
+                <img src="./images/p1.png" alt="Special Offer">
+                <div class="des-text">
+                    <div><h2>&#x20b9;209</h2>
+                        <p>Regular | New Hand Tossed</p></div>
+                    <button><a href="./cart.html">ADD +</a></button>
+                </div>
+            </div>
+            <div class="sec3-card">
+                <img src="./images/p2.png" alt="Special Offer">
+                <div class="des-text">
+                    <div><h2>&#x20b9;196</h2>
+                        <p>Regular | New Hand Tossed</p></div>
+                        <button><a href="./cart.html">ADD +</a></button>
+                </div>
+            </div>
+            <div class="sec3-card">
+                <img src="./images/p3.png" alt="Special Offer">
+                <div class="des-text">
+                    <div><h2>&#x20b9;159</h2>
+                        <p>Regular | New Hand Tossed</p></div>
+                        <button><a href="./cart.html">ADD +</a></button>
+                </div>
+            </div>
+            <div class="sec3-card">
+                <img src="./images/p4.png" alt="Special Offer">
+                <div class="des-text">
+                    <div><h2>&#x20b9;149</h2>
+                        <p>Regular | New Hand Tossed</p></div>
+                        <button><a href="./cart.html">ADD +</a></button>
+                </div>
+            </div>
+            <div class="sec3-card">
+                <img src="./images/p5.png" alt="Special Offer">
+                <div class="des-text">
+                    <div><h2>&#x20b9;296</h2>
+                        <p>Regular | New Hand Tossed</p></div>
+                        <button><a href="./cart.html">ADD +</a></button>
+                </div>
+            </div>
+            <div class="sec3-card">
+                <img src="./images/p6.png" alt="Special Offer">
+                <div class="des-text">
+                    <div><h2>&#x20b9;259</h2>
+                        <p>Regular | New Hand Tossed</p></div>
+                        <button><a href="./cart.html">ADD +</a></button>
+                </div>
+            </div>
+            <div class="sec3-card">
+                <img src="./images/p7.png" alt="Special Offer">
+                <div class="des-text">
+                    <div><h2>&#x20b9;289</h2>
+                        <p>Regular | New Hand Tossed</p></div>
+                        <button><a href="./cart.html">ADD +</a></button>
+                </div>
+            </div>
+            <div class="sec3-card">
+                <img src="./images/p8.png" alt="Special Offer">
+                <div class="des-text">
+                    <div><h2>&#x20b9;279</h2>
+                        <p>Regular | New Hand Tossed</p></div>
+                        <button><a href="./cart.html">ADD +</a></button>
+                </div>
+            </div>
+            <div class="sec3-card">
+                <img src="./images/p9.png" alt="Special Offer">
+                <div class="des-text">
+                    <div><h2>&#x20b9;209</h2>
+                        <p>Regular | New Hand Tossed</p></div>
+                        <button><a href="./cart.html">ADD +</a></button>
+                </div>
+            </div>
+            <div class="sec3-card">
+                <img src="./images/p10.png" alt="Special Offer">
+                <div class="des-text">
+                    <div><h2>&#x20b9;229</h2>
+                        <p>Regular | New Hand Tossed</p></div>
+                        <button><a href="./cart.html">ADD +</a></button>
+                </div>
+            </div>
+           </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

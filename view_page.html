@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domino's Pizza</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        nav {
+            margin-top: 10px;
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 15px;
+            border: 1px solid transparent;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        nav a.active, nav a:hover {
+            background-color: #ff5733;
+            color: #fff;
+            border-color: #ff5733;
+        }
+
+        .filters {
+            display: flex;
+            gap: 15px;
+            padding: 10px 20px;
+            background-color: #fff;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .filters button {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        .filters button.active {
+            background-color: #ff5733;
+            color: #fff;
+            border-color: #ff5733;
+        }
+
+        .pizza-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .pizza-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .pizza-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .pizza-card .content {
+            padding: 15px;
+        }
+
+        .pizza-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .pizza-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .pizza-card .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pizza-card .price {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .pizza-card button {
+            padding: 8px 12px;
+            background-color: #ff5733;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .pizza-card button a{
+            text-decoration: none;
+            color: #fff;
+            
+        }
+
+        .pizza-card button:hover {
+            background-color: #e44d2b;
+        }
+
+        .section-title {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pizzology</h1>
+        <nav>
+            <a href="#">New Launches</a>
+            <a href="#" class="active">Cheese Burst Pizza</a>
+            <a href="#">Pizza Mania</a>
+            <a href="#">Garlic Breads & More</a>
+            <a href="#">Desserts</a>
+            <a href="#">Recommended</a>
+        </nav>
+    </header>
+
+    <div class="filters">
+        <button class="active">Veg Only</button>
+        <button>Non-Veg Only</button>
+        <button>Sort by &#x25B2;</button>
+    </div>
+
+    <div class="section-title">Cheese Burst Pizza</div>
+
+    <div class="pizza-container">
+        <div class="pizza-card">
+            <img src="./images/peppy.png" alt="Peppy Paneer">
+            <div class="content">
+                <h3>Peppy Paneer</h3>
+                <p>Molten cheese indulgence with juicy paneer, crisp capsicum & spicy red paprika.</p>
+                <div class="footer">
+                    <span class="price">₹344</span>
+                    <button><a href="./cart.html">ADD +</a></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pizza-card">
+            <img src="./images/farm.png" alt="Farmhouse">
+            <div class="content">
+                <h3>Farmhouse</h3>
+                <p>Delightful combination of onion, capsicum, tomato & grilled mushroom.</p>
+                <div class="footer">
+                    <span class="price">₹344</span>
+                    <button><a href="./cart.html">ADD +</a></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pizza-card">
+            <img src="./images/spiced.png" alt="Margherita">
+            <div class="content">
+                <h3>Spiced Double Chicken Pizza</h3>
+                <p>Molten Cheese Indulgence with combination of Pepper Barbecue Chicken & Peri Peri Chicken for Chicken lovers.</p>
+                <div class="footer">
+                    <span class="price">₹404</span>
+                    <button><a href="./cart.html">ADD +</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
